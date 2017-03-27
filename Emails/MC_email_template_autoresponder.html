@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+    
+<style type="text/css">
+/***** GENERAL EMAIL CLIENT FIXES *****/
+/* Forces Hotmail to display normal line spacing*/ 
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+body {
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+margin: 0 !important;
+padding: 0 !important;
+}
+ 
+/*This resolves the Outlook 07, 10, and Gmail td padding issue fix*/ 
+
+table td {border-collapse: collapse !important;}
+ 
+/* Fixes link colors on iPhones */
+.appleLinks a {
+color: #ffffff;
+text-decoration: none;
+}
+ 
+.appleLinksFooter a {
+color: #959595;
+text-decoration:none;
+}
+ 
+.appleLinksGrey a {
+color: #4f4f4f;
+text-decoration:none;
+}
+
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+
+
+/* Changes body styling */
+
+body {
+    width: 100%;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: "SalesforceSansRegular", "Helvetica Neue", Helvetica, Arial ,sans-serif;
+}
+
+.orangeline{
+    background-color: #e98300;
+    width: 100%;
+    height: 15px;
+}
+    
+.centerpage{
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+}
+
+#maincontainer {
+    border-color: #eee;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    margin: 20px;
+}
+
+#headerimg{
+    border-radius: 15px 15px 0px 0px;
+    height:auto;
+    position: relative;
+    z-index: -1;
+}
+
+#bottomimg{
+    border-radius: 0px 0px 15px 15px;
+    height:auto;
+    position: relative;
+}
+
+.logo img {
+    width: 280px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+/* RESPONSIVE STYLES */
+@media only screen and (max-width: 480px) {
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+
+/* Resizes tables with fixed widths of 320px or higher */
+table[class="container"] {width: 100% !important;}
+ 
+/* Centers logo and drops and centers issue date */
+td[class="stay"] {
+width: 100% !important;
+float: left !important;
+}
+ 
+td[class="img-stay"] {
+width:100% !important;
+float:left !important;
+padding:20px 0px 20px 0px !important;
+}
+
+td[class="drop"] {
+width: 100% !important;
+float: left !important;
+padding: 10px 0px 0px 0px !important;
+}
+ 
+td[class="event-drop"] {
+width:100% !important;
+float:left !important;
+padding:20px 0px 0px 20px !important;
+}
+
+td[class="img-drop"] {
+width:100% !important;
+float:left !important;
+padding:20px 0px 20px 0px !important;
+}
+
+/* Centers logo and drops and centers issue date */
+td[class="tertiary-stay"] {
+width: 100% !important;
+float: left !important;
+padding: 30px 0px 0px 0px !important;
+}
+
+td[class="tertiary-drop"] {
+width: 100% !important;
+float: left !important;
+padding: 10px 0px 0px 0px !important;
+text-align:center !important;
+}
+
+ 
+/* Wraps and centers issue date */
+span[class="hide"] {display: none !important;}
+
+
+/* Centers and resizes images and text */
+table[class="img-center"] {
+width: 100% !important;
+padding: 0px !important;
+text-align:center !important;
+}
+
+td[class="img-center"] {
+width:100% !important;
+padding:0px !important;
+}
+ 
+table[class="img-width"] {width:100% !important;}
+
+td[class="img-width"] {
+width: 100% !important;
+height:auto !important;
+}
+ 
+table[class="button-width"] {width:100% !important;}
+ 
+
+/* Hides selected elements */
+td[class="hide"] {display: none !important;}
+ 
+span[class="hide"] {display: none !important;}
+
+
+/* Resizes full width images */
+img[class="crop"] {
+height: auto !important;
+max-width: 550px !important;
+width: 100% !important;
+}
+
+img[class="showmob"] {
+height: auto !important;
+max-width: 550px !important;
+width: 100% !important;
+display: block !important;
+}
+
+td[class="crop"] img {
+height: auto !important;
+max-width: 550px !important;
+width: 100% !important;
+}
+
+/* Resizes video */
+img[class="video-crop"]{
+height:auto !important;
+max-width:550px !important;
+width:100% !important;
+padding:0px !important;
+margin:0px !important;
+}
+ 
+video[class="video-crop"]{
+height:auto !important;
+max-width:550px !important;
+width:100% !important;
+padding:0px !important;
+margin:0px !important;
+}
+
+
+/* Shows resized logo image */  
+td[class="logo-resize"] img {
+width: 150px !important;
+height: auto !important;
+padding: 14px 0px 0px 0px !important;
+}
+}
+</style>
+ 
+</head>
+  <body>
+      
+<table width="100%">
+     <tbody>   
+      	<tr><td class="orangeline" bgcolor="#e98300" width="100%" height="15" cellpadding="0" cellspacing="0"></td></tr>
+		<tr class="logo centerpage" align="center"><td><a href="https://www.salesforce.com/" target="_blank" alias="SFMC Logo"><img src="http://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/cc459d56-a2c1-4aa5-9a7a-e6e561c0e5a2.png" alt="Salesforce Marketing Cloud" style="display:block; color:#009DDC; text-decoration:none;font-size:14px; border: 0;" width="280" align="center"></a>
+        </td></tr>
+        <tr class="centerpage maincontainer container" align="center" ><td>
+      	<table class="" align="center" cellpadding="0" cellspacing="0" style="border-color:#eee; border-radius:20px; border-style:solid; border-width:2px; margin:20px;" width="550">
+                 <tbody>
+                    <tr><td class="topcontainer">
+                      <img src="http://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/c1cda8fc-acd2-4e5c-aa10-dd18267f3711.png" id="headerimg" width="550" border="0" alt="Premier Success Plan" style="display: block; border-radius: 15px 15px 0px 0px;"></td>
+                      </tr>      
+
+                      <tr><td class="bodycontainer" valign="middle" align="left" width="550" cellpadding="0" cellspacing="0" style="padding: 20px 20px 20px 20px; font-family: 'SalesforceSansRegular', 'Helvetica Neue', Helvetica, Arial ,sans-serif;">
+                    <p>Hello %%FirstName%%,</p>
+                    <p>Thank you for submitting your inquiry to the Social Success Hub. Your question is being routed to one of our Social Studio success specialists and one of the team will be replying to you directly within the next 48 hours.</p>
+                    <p>For your records, here is a copy of your submission:</p>
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td>FirstName LastName</td>
+                            </tr>
+                            <tr>
+                                <td>Company:</td>
+                                <td>Company</td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>Email</td>
+                            </tr>
+                            <tr>
+                                <td>Question Type:</td>
+                                <td>QuestionType1, QuestionType2</td>
+                            </tr>
+                            <tr>
+                                <td>Question:</td>
+                                <td>Question</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Thanks,</p>
+                    <p>Social Studio Success Team</p></td>
+                    </tr> 
+      
+                      <tr><td class="bottomcontainer">
+                      <img src="http://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/0a54d96b-b90c-4832-bcca-6d63ad372f12.jpg" id="bottomimg" alt="Salesforce Marketing Cloud" style="display:block; border: 0; border-radius: 0px 0px 15px 15px;" align="center" width="550"></td>
+                      </tr> 
+                 </tbody>
+            </table>
+        </td></tr> 
+     	<tr><td class="orangeline" bgcolor="#e98300" height="15" align="center">
+            <table class="linkcontainer">
+                <tbody>
+                    <tr>
+                 <td width="35" align="center" style="font-family:Verdana, Helvetica, Arial, sans-serif; padding: 0px 5px;"><a href="https://www.facebook.com/MarketingCloud" target="_blank" style="text-decoration:none;"><img src="http://image.exct.net/lib/fe641570776d02757515/m/4/Facebook_Orange.png" alt="f" border="0" width="35" height="35" style="display:block;color:#FFFFFF; text-decoration:none;"></a></td>
+                 <td width="35" align="center" style="font-family:Verdana, Helvetica, Arial, sans-serif; padding: 0px 5px;"><a href="http://www.twitter.com/marketingcloud" target="_blank" style="text-decoration:none;"><img src="http://image.exct.net/lib/fe641570776d02757515/m/4/Twitter_Orange.png" alt="t" border="0" width="35" height="35" style="display:block;color:#FFFFFF; text-decoration:none;"></a></td>
+                 <td width="35" align="center" style="font-family:Verdana, Helvetica, Arial, sans-serif; padding: 0px 5px;"><a href="https://www.linkedin.com/company/salesforce-marketing-cloud-" target="_blank" style="text-decoration:none;"><img src="http://image.exct.net/lib/fe641570776d02757515/m/4/LinkedIn_Orange.png" alt="in" border="0" width="35" height="35" style="display:block; color:#FFFFFF; text-decoration:none;"></a></td>
+                                <td width="35" align="center" style="font-family:Verdana, Helvetica, Arial, sans-serif; padding: 0px 5px;"><a href="https://www.salesforce.com/blog/" target="_blank"><img src="http://image.exct.net/lib/fe641570776d02757515/m/4/Blog_Orange.png" alt="b" border="0" width="35" height="35" style="display:block; color:#FFFFFF; text-decoration:none;"></a></td>
+                    </tr>    
+                </tbody>
+            </table>    
+    </td></tr>
+     </tbody>
+    </table>
+
+
+    <custom name="opencounter" type="tracking" />
+  </body>
+</html>

@@ -1,0 +1,905 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- jQuery -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!-- Bootstrap Core JavaScript -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <!-- Scrolling Nav JavaScript -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+    <!-- Bootstrap Core CSS -->
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel="stylesheet">
+    
+        <!-- MC Themes -->
+ <link type="text/css" rel="stylesheet" href="https://www.marketingcloud.com/sites/exacttarget/themes/custom/exacttarget/css/legacy.css" media="all" />
+ <link type="text/css" rel="stylesheet" href="https://www.marketingcloud.com/sites/exacttarget/themes/custom/exacttarget/css/mcloud.css" media="all" />	
+ <link type="text/css" rel="stylesheet" href="https://brandcdn.exacttarget.com/sfmc/css/blueprint-ux-v1.2.1.min.css" media="all" />
+
+<title>Marketing Cloud - Email Marketing, Social Media and Marketing Automation</title>
+     
+ <meta name="description" content="As the world’s most powerful 1-to-1 digital marketing platform, the Salesforce Marketing Cloud helps you make the most of every customer interaction — creating personalized, cross-channel customer journeys that deliver exceptional brand experiences." />
+
+
+</head>
+
+<style>
+/* success community */
+
+.navbar.navbar-default {
+    height: auto !important;
+    min-height: 0!important;
+    background-color: #f8f8f8 !important;
+}
+	
+/* main css */
+
+	body {
+	    width: 100%;
+	    height: 100%;
+	}
+	
+	html {
+	    width: 100%;
+	    height: 100%;
+	}
+	
+	h2 {
+		margin-bottom: 20px !important;
+	}
+	
+	td, th {
+	    padding-top: 2px;
+	    padding-right: 5px;
+	    padding-bottom: 2px;
+	    padding-left: 5px;
+	}
+	
+	@media(min-width:767px) {
+	    .navbar {
+	        padding: 20px 0;
+	        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+	        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+	        transition: background .5s ease-in-out,padding .5s ease-in-out;
+	    }
+	
+	    .top-nav-collapse {
+	        padding: 7px;
+	    }
+	
+		.navbar-brand img {
+		    max-width: 100%;
+		    margin-top: -10px;
+		    height: 50px;
+		    position: relative;
+		    z-index: 100;
+		}
+	}
+	
+	@media(max-width:767px) {
+		
+		.navbar-brand img {
+		    max-width: 100%;
+		    margin-top: -10px;
+		    height: 45px;
+		    position: relative;
+		    z-index: 100;
+		}
+		
+	}
+	
+	/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+
+	.intro-section {
+		
+	}
+	
+	.about-section {
+	    padding-top: 70px;
+	    background: #fff;
+	}
+	
+	.form-section {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	    background: #eee;
+	    margin-top: -8px !important;
+	}
+	
+	.journey-section {
+	    background: #fff;
+		height: 100px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}	
+
+	.contact-section {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	    background: #eee;
+	}
+	
+	.footer-section {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	}
+
+/* header and background image*/
+
+	@media(min-width:2500px) {
+		header.intro-header  {
+			padding-bottom: 400px;
+			padding-top: 200px;
+		}
+		
+		.image-background {
+		 	background-position: 50% 100%;
+		 	background-size: cover;
+		 	margin-top: 50px;
+		 	padding-top: 50px;
+	}
+	}
+
+	@media(min-width:640px) and (max-width: 2500px) {
+		header.intro-header {
+			padding-bottom: 275px;
+			padding-top: 50px;
+		}
+			
+		.image-background {
+	 		background-position: 50% 10%;
+	 		background-size: cover;
+	 		margin-top: 50px;
+	 		padding-top: 50px;
+	}
+	}
+
+	@media(max-width:640px) {
+		header.intro-header {
+			padding-bottom: 75px;
+			padding-top: 15px;
+		}
+		
+		.image-background{
+	 		background-position: 50% 0%;
+	 		background-size: cover;
+	 		margin-top: 50px;
+	 		padding-top: 50px;
+	}
+	}
+	
+	.orangeline{
+    	background-color: #e98300;
+    	width: 100%;
+    	height: 15px;
+	}
+	
+	h1.header-style {
+    	font-family: "SalesforceSansRegular","Trebuchet MS",Arial,sans-serif;
+    	font-size: 40px;
+    	line-height: 1.1;
+    	color: white;
+    	/* text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.4); */
+    }
+    
+    .navbar-toggle {
+	    background-color: transparent !important;
+	    border: 1px solid transparent !important;
+	    border-radius: 4px !important;
+    }
+
+/* font style */
+	
+	.blue-font {
+		color: #009cdb;
+	}
+	
+	.orange-font {
+		color: #ed8b00;
+	}
+
+/* header */
+
+	.intro-header{
+		width: 400px;
+	}
+
+/* Journey */
+	
+	.journey-section img{
+		z-index:999999;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#journeygrey{
+		background-color: #eee !important;
+	}
+	
+/* Astro Codey */	
+	
+	.figureparent{
+		position: relative;
+	}
+	
+	.figure {
+		position: absolute;
+	}
+	
+	.figure img{
+		display: block;
+		z-index: -1;
+		height: 250px;
+	}
+	
+	#astro{
+		right: 10px;
+		bottom: -150px;
+	}
+	
+	#codey{
+		left: 20px;
+		top: -60px;
+	}
+
+/* About us */
+	
+	.row.section-lander {
+	    border-top: 1px solid #e4e4e4;
+	    padding: 10px 0 !important;
+	}
+	
+	.row.section-lander .zoom-image {
+    	margin-top: 0px !important;
+	}
+	
+	.about-image{
+		height: 150px;
+		margin-bottom: 5px;
+	}
+
+	.about-content{
+		position: relative;
+		display: block;
+		width: auto;
+		height: 425px;
+	 	margin-top: 10px;
+	 	margin-bottom: 50px;
+	 	margin-left: 5px;
+	 	margin-right: 5px;
+	 	text-align: center;
+	}
+
+	.about-button{
+		position: absolute;
+		bottom: 0px;
+		left:0px;
+		right: 0px;
+	}
+
+/* FORM */
+	
+ .form-container {
+     background-color: rgba(250,250,250,0.50);
+     border-color: #eee;
+     border-radius: 8px;
+     margin: 20px;
+     padding: 25px;
+     text-align: left;
+     color: black;
+ } 
+
+.columns-wrapper .bg-opacity {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+}
+
+.bg-mist {
+    background-color: #d9e1e2;
+}
+
+#thankyou img {
+	width: 75px;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+}
+
+/* contactus */
+	
+	.contact-boxes {
+	    background-color: #fff;
+	    border-color: #eee;
+	    border-radius: 8px;
+	    border-style: solid;
+	    border-width: thin;
+	    height: 200px;
+	    width:225px;
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+	    margin-right: 15px;
+	    padding: 15px !important;
+	    transition: background 0.6s ease 0s;
+	    display: block;
+	}	
+	
+	.contact-boxes p{
+		display: none;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		z-index: 0;
+	}
+
+	.contact-boxes img{
+	    position: absolute;  
+	    top: 0;  
+	    bottom: 0;  
+	    left: 0;  
+	    right: 0;  
+	    margin-top: auto;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-bottom: 25px;
+	}
+	
+	.contact-boxes h4{
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.contact-boxes:hover {
+		cursor: pointer;
+		position: relative;
+		top: -2px;
+		box-shadow: 3px 3px 5px 0px rgba(0,0,0,.2);
+		transition: .4s ease;
+		color: #e98300;
+	}
+	
+	.contact-boxes:hover p {
+		display: block;
+		transition: .4s ease;
+		color: #e98300;
+	}
+
+	.contact-boxes:hover img {
+		transition: .4s;
+		display: none;
+	}
+		
+	a.contact-a {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		opacity: 0;
+	}
+
+/* footer */
+
+	.footer-background{
+	 	background-position: 50% 100%;
+	 	background-size: cover;
+	 	padding-top: 50px;
+	}
+	
+	.logo-blue {
+		max-width: 250px;
+		height: 62px;
+		margin: 0 0 30px 0;
+	}
+	
+	.page-footer_links_list .leaf{
+	    display: inline-block;
+	    border-right: solid 1px #959595;
+	    padding-right: 5px;
+	    font-size: 13px;
+	    line-height: 20px;
+	}
+	
+	.social{
+		padding-left: 0px;	
+	}
+	
+	.page-footer_links_list{
+		padding-left: 0px;			
+	}
+
+	.social-row .social li {
+	    display: inline-block;
+	    padding: 2px;
+	}
+	
+	.footernote {
+		font-size: 12px;
+		padding: 5px;
+		margin-bottom: 20px;
+	}
+	
+</style>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                </button>
+            <a class="navbar-brand page-scroll" href="#page-top"><img src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/cc459d56-a2c1-4aa5-9a7a-e6e561c0e5a2.png"></a>
+            </div>
+            
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#links">Resources</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#form">Ask Your Question?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section image-background" style="background-image: url(https://www.marketingcloud.com/content/dam/web/en_us/marketing-cloud/images/homepage/Hero%20Banners%20422/Homepage_Email_Desktop.png);" >
+	    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+	                <header class="intro-header">
+						<h1 class="header-style">Social Success Hub</h1>
+						<p>We’re here to help our customers by providing guidance and best practices for Social Studio. Need Help? Have a question?  You can reach a Social Studio expert directly by filling out the form and hitting submit. 
+</p>
+						<div class="btn-container">
+							<a class="btn trackable btn-primary page-scroll" role="button" href="#form">Ask Your Question!</a>
+						</div>
+					</header>	
+                </div>
+            </div>
+        </div>     
+    </section>
+
+
+        <!-- journey Section --> 
+    <section class="journey-section">
+		<h5 class="orange-font text-center">Start the Journey</h5>
+ 		<img src="https://c1.sfdcstatic.com/content/dam/web/en_us/marketing-cloud/images/homepage/timeline_line.png" data-src="//c1.sfdcstatic.com/content/dam/web/en_us/marketing-cloud/images/homepage/timeline_line.png">
+    </section>
+
+    <!-- Contact Section -->
+    <section id="links" class="contact-section">
+        <div class="container figureparent">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Find Social Studio Resources</h2>
+                    <h3 class="blue-font">Check out the resources below to help you achieve your goals that you can start using today!</h3>
+						
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Get started with Social Studio</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/4a7b344f-ce9f-4218-bdfa-95d4d1cae698.png">
+									<p>The Getting Started hub is the place to go to get up and running with Social Studio</p>
+									<a class="contact-a page-scroll" href="http://pages.mail.salesforce.com/page.aspx?QS=3935619f7de112efc3ef6f6de92aa18e6d7eeb8bd9e5fd22&utm_source=Page&utm_medium=SocialSuccessHub&utm_campaign=012017" target="_blank"></a>
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Optimize Social Listening</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/2a99641c-cba2-4c7f-84b5-acf06a7c194d.png">
+									<p>Up and Running with Social Studio? Fine tune your topic profiles and uncover the insights you need</p>
+									<a class="contact-a" href="http://pages.mail.salesforce.com/achieve-more/optimize-social-listening/?utm_source=Page&utm_medium=SocialSuccessHub&utm_campaign=012017" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Circles of Success</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/9f8872b6-f3fd-443d-adc6-53e1f5425239.png">
+									<p>Learning from other customers and sharing best practices, through a live, interactive, virtual and unscripted discussion hosted by a Salesforce expert</p>
+									<a class="contact-a" href="https://sites.google.com/site/salesforcecirclesofsuccess/" target="_blank"></a> 
+								</div>
+							
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Live Office Hours</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/d6085f97-0a91-40d3-bb19-54cbc364fe94.png">
+									<p>Join our weekly live Office Hours on Fridays to ask your questions to an expert or hear questions from other customers</p>
+									<a class="contact-a" href="https://bit.ly/NewOfficeHours" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Social Studio Documentation</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/cb438bb7-09a8-45be-886f-d1b012389188.png">
+									<p>Find our how-to’s and information on new features</p>
+									<a class="contact-a" href="https://help.marketingcloud.com/documentation/social_studio" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Social Studio Mobile App Documentation</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/9edb203a-fd1b-490f-b0df-3c3f214d3ea9.png">
+									<p>Find our how-to’s and information on new features geared to our Mobile Application</p>
+									<a class="contact-a" href="https://help.marketingcloud.com/documentation/social_studio_mobile" target="_blank"></a> 
+								</div>								
+
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Training</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/78df5701-ed76-4045-91d4-63b2252cb168.png">
+									<p>Search virtual and in-person instructor-led training options.</p>
+									<a class="contact-a" href="https://www.salesforce.com/services-training/training_certification/find-a-class.jsp?d=70130000000EzNV&internal=true#cursor=0&name=SS101&location=&daterange=" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-12 col-md-6 col-lg-4">
+									<h4>Release Updates</h4>
+									<img class="contact-img" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/e05502f6-5c43-40a6-9c15-8da83e00f899.png">
+									<p>Keep up-to-date on our Social Product Releases by subscribing via the Marketing Cloud Preference Center</p>
+									<a class="contact-a" href="https://pages.mktg.salesforce.com/preferencecenter" target="_blank"></a> 
+								</div>
+                			
+                
+                </div>
+            </div>
+			<div class="figure" id="astro"><img class="img-responsive" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/3a58fe3a-692b-4d8a-a317-b9e0090d1419.png"></div>	
+        </div>
+    </section>
+
+
+        <!-- journey Section --> 
+    <section class="journey-section">
+	    
+		<h5 class="orange-font text-center">Still need help?</h5>
+ 		<img src="https://c1.sfdcstatic.com/content/dam/web/en_us/marketing-cloud/images/homepage/timeline_line_footer.png">
+    </section>
+
+        <!-- Form Section --> 
+    <section id="form" class="form-section image-background" style="background-image: url(https://c2.sfdcstatic.com/content/dam/web/en_us/www/images/line-of-business/marketing/hero-landscape-marketing-02.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+				<h2>Success Hub Form</h2>	
+				<h4>Ask Your Question:</h4>	
+				<div class=" form-container">
+					<div id="lp-form"> 
+						<form name="subscribeForm" id="mc-landing-page-form">      
+						<div id="edit-lp-form" class="form-wrapper form-group">
+ 
+		  					<div class="form-type-textfield form-item-UserFirstName form-item form-group">    
+			  					<input data-rule="fname" data-field="fname" placeholder="First Name" class="form-control form-text required" type="text" id="edit-userfirstname" value="" size="60" maxlength="128" aria-required="true" name="FirstName" required>
+     						</div>
+ 
+	 						<div class="form-type-textfield form-item-UserLastName form-item form-group">
+	 							<input data-rule="lname" data-field="lname" placeholder="Last Name" class="form-control form-text required" type="text" id="edit-userlastname" value="" size="60" maxlength="128" aria-required="true" name="LastName" required>
+     						</div>
+     
+	 						<div class="form-type-textfield form-item-UserCompany form-item form-group">
+	 							<input data-rule="company" data-field="company" placeholder="Company" class="form-control form-text required" type="text" id="edit-company" value="" size="60" maxlength="128" aria-required="true" name="Company" required>
+	 						</div> 
+ 
+	 						<div class="form-type-textfield form-item-UserEmail form-item form-group">
+	 							<input data-rule="email" data-field="email" placeholder="Email" class="form-control form-text required" type="email" id="edit-useremail" value="" size="60" maxlength="128" aria-required="true" name="Email" required>
+	 						</div>
+
+	 						<div class="form-type-textfield form-item-QuestionType form-item form-group">
+							    <select data-rule="QuestionType" class="form-control form-text required" id="QuestionType" name="QuestionType1" required>
+							       <option value="" disabled selected>-- Please Select --</option>
+							       <option value="Getting Started">Getting Started</option>
+							       <option value="Best Practices">Best Practices</option>
+							       <option value="Implementation">Implementation</option>
+							       <option value="Product Functionality">Product Functionality</option>
+							       <option value="Premier Resources">Premier Resources</option>
+							       <option value="Account Management">Account Management</option>
+							       <option value="Technical Support">Technical Support</option>
+							    </select>
+							</div> 
+      
+							<select data-rule="QuestionType" class="form-control form-text required" name="QuestionType2" id="child_selection">
+      						</select>
+     						</div>
+     
+	 						<div class="form-type-textfield form-item-textarea form-item form-group">
+	 						<textarea data-rule="textarea" data-field="textarea" placeholder="Enter your question here" class="form-control form-textarea required" rows="5" id="edit-textarea" aria-required="true" name="Question" required></textarea>
+     						</div>     
+         
+	 						<div class="form-type-textfield form-item-modules form-item form-group">
+	 						Have you completed Social Studio eLearning modules?<input value='1' data-rule="modules" data-field="modules" class="form-control required" type="checkbox" id="edit-company" aria-required="true" name="eLearning" required>
+     						</div>  
+     
+	 						<input class="btn btn-default form-submit" id="edit-submit--3" name="op" value="Submit" type="submit">
+ 
+	 					</form> 
+ 						</div>
+ 						<div id="thankyouresponse"></div>
+ 						<div id="thankyou"><img src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/acebcf9c-1b7d-431d-918f-f8fe5a41acd9.gif"/></div>
+						</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- journey Section --> 
+    <section id="journeygrey" class="journey-section figureparent">
+		<h5 class="orange-font text-center">What we do!</h5>
+ 		<img src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/7307333f-c975-4023-9833-0c97fdf4a7f0.png">
+ 		<div class="figure" id="codey"><img class="img-responsive" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/d7e3e9f9-527d-4b01-a4d7-35d08362930a.png"></div>	
+    </section>
+
+
+         <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Are you getting the most from Social Studio?</h2>
+					
+						<div class="section-lander col-xs-12 col-sm-12 col-md-6 col-lg-3">
+							<div class="about-content"><img class="zoom-image about-image" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/58f3e62e-2427-442e-8316-9cc0ee9396cb.png" />
+								<h3 class="blue-font">Listening</h3>
+								<p>Analyze social conversations from millions of different sources with social media monitoring software. Discover what customers are saying about your brand, products, and competitors</p>
+								<a class="btn trackable btn-primary about-button" role="button" href="https://www.marketingcloud.com/content/marketing-cloud/en_us/products/social-media-marketing/social-studio.html" target="_blank">learn more</a>
+							</div>
+						</div>
+					
+						<div class="section-lander col-xs-12 col-sm-12 col-md-6 col-lg-3">
+							<div class="about-content"><img class="zoom-image about-image" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/42302591-2e0c-4e74-a0f8-2c115ccb692a.png" />
+								<h3 class="blue-font">Publishing</h3>
+								<p>Plan, schedule, and publish social posts across multiple accounts and networks. Create and approve content, route for approval, and publish relevant messages at the right moment</p>
+								<a class="btn trackable btn-primary about-button" role="button" href="https://www.marketingcloud.com/content/marketing-cloud/en_us/products/social-media-marketing/customer-success-platform.html" target="_blank">learn more</a>
+							</div>
+						</div>
+
+						<div class="section-lander col-xs-12 col-sm-12 col-md-6 col-lg-3">
+							<div class="about-content"><img class="zoom-image about-image" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/551f5b14-62c6-40e1-bfef-9e9b78d383d4.png" />
+								<h3 class="blue-font">Engagement</h3>
+								<p>Respond to social posts, manage your community, and measure social activity. Use workflow and social automation to drive efficiency and route social posts to your team and beyond</p>
+								<a class="btn trackable btn-primary about-button" role="button" href="https://www.marketingcloud.com/content/marketing-cloud/en_us/products/social-media-marketing/social-engagement.html" target="_blank">learn more</a>
+							</div>
+						</div>
+
+						<div class="section-lander col-xs-12 col-sm-12 col-md-6 col-lg-3">
+							<div class="about-content"><img class="zoom-image about-image" src="https://image.s6.exacttarget.com/lib/fe9412747461037d71/m/1/21b7b19d-4ddc-4436-886b-c4c507a24d63.png" />
+								<h3 class="blue-font">Command Center</h3>
+								<p>Get live multiscreen displays of customer feedback, social conversations, and digital marketing activity around your brand and industry</p>
+								<a class="btn trackable btn-primary about-button" role="button" href="https://www.marketingcloud.com/content/marketing-cloud/en_us/products/social-media-marketing/social-command-center.html" target="_blank">learn more</a>
+							</div>
+						</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer-section site-footer footer-background" role="contentinfo" style="background-image: url(https://www.marketingcloud.com/sites/exacttarget/files/styles/full/public/footer-success-through-social-listening-desktop.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<div class="left_footer col-xs-9">
+						<div class="logo-blue">
+							<a href="https://marketingcloud.com"><img class="img-responsive" src="https://c1.sfdcstatic.com/content/dam/web/en_us/marketing-cloud/images/homepage/SMC_logo@2x1.png"></a>
+						</div>
+
+		<div class="social-row">
+						<ul class="social">
+			        <li>
+			            <a href="https://www.facebook.com/salesforce" target="_new" class="fb"><i class="fa fa-facebook-square fa-3x"></i></a>
+			        </li>
+			        <li>
+			            <a href="https://twitter.com/salesforce" target="_new" class="tw"><i class="fa fa-twitter-square fa-3x"></i></a>
+			        </li>
+			        <li>
+			            <a href="https://www.linkedin.com/company/salesforce" target="_new" class="li"><i class="fa fa-linkedin-square fa-3x"></i></a>
+			        </li>
+			        <li>
+			            <a href="https://plus.google.com/+Salesforce/about" target="_new" class="gp"><i class="fa fa-google-plus-square fa-3x"></i></a>
+			        </li>
+			        <li>
+			            <a href="https://www.youtube.com/salesforce" target="_new" class="yt"><i class="fa fa-youtube-square fa-3x"></i></a>
+			        </li>
+			    </ul>
+		</div>				
+
+						
+						<div class="footer-legal">
+                                <ul class="page-footer_links_list">
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/anti-spam-policy/" target="_blank">Anti-SPAM Policy</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/legal/" target="_blank">Legal</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/user-groups/" target="_blank">User Groups</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://code.exacttarget.com/" target="_blank">Code@</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/blog/" target="_blank">Blog</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://help.marketingcloud.com/" target="_blank">Product Help</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://marketingcloud.com/faq/" target="_blank">FAQ</a>
+                                    </li>
+                                
+                                    <li class="leaf">
+                                        <a href="https://help.salesforce.com/home" target="_blank">Support</a>
+                                    </li>
+                                </ul>
+                            </div>		
+		
+					</div>
+			
+
+
+					<div class="left_footer col-xs-3">
+					</div>
+
+                </div>
+            </div>
+            
+            <div class="footernote"><p>© Copyright 2016 Salesforce.com, inc. All rights reserved. Salesforce.com, inc. The Landmark at One Market, Suite 300, San Francisco, CA 94105, United States</p></div>	
+        </div>        
+	</footer>
+
+</body>
+
+<script type="text/javascript">
+	
+//jQuery to collapse the navbar on scroll -> scrolling Nav
+$(window).scroll(function() {
+    if ($(".navbar").offset().top > 50) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+});
+
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});	
+
+$(document).ready(function(){
+
+$("#child_selection").hide();
+//let's create arrays
+var OptionsOnetoFour = [
+    {display: "Publishing", value: "Publishing" }, 
+    {display: "Engagement", value: "Engagement" }, 
+    {display: "Administration", value: "Administration" },
+    {display: "Analyze / Listen", value: "Analyze-Listen" },
+    {display: "Reporting", value: "Reporting" },
+    {display: "Governance", value: "Governance" }];
+    
+var Option5 = [
+    {display: "Welcome Call", value: "Welcome-Call" }, 
+    {display: "Premier Training", value: "Premier-Training" }, 
+    {display: "Accelerators", value: "Accelerators" },
+    {display: "Premier Support", value: "Premier-Support" },
+    {display: "Developer Support", value: "Developer-Support" },
+    {display: "Configuration Support", value: "Configuration-Support" }];   
+ 
+//If parent option is changed
+$("#QuestionType").change(function() { 
+        var parent = $(this).val(); //get option value from parent
+       
+        switch(parent){ //using switch compare selected option and populate child
+              case 'Getting Started':
+               $("#child_selection").show();  
+                list(OptionsOnetoFour);
+                break;
+              case 'Best Practices':
+                $("#child_selection").show();
+                list(OptionsOnetoFour);
+                break;             
+              case 'Implementation':
+               $("#child_selection").show();
+                list(OptionsOnetoFour);
+                break; 
+   case 'Product Functionality':
+    $("#child_selection").show();
+                list(OptionsOnetoFour);
+                break;
+            case 'Premier Resources':
+                $("#child_selection").show();
+                list(Option5);
+                break;    
+            default: //default child option is blank
+                $("#child_selection").hide();  
+                break;
+           }
+});
+//function to populate child select box
+function list(array_list) {
+    $("#child_selection").html(""); //reset child options
+    $(array_list).each(function (i) { //populate child options
+        $("#child_selection").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
+    });
+}
+
+});
+
+$("#mc-landing-page-form").submit(function(e) {
+ 	e.preventDefault();
+    var url = "https://pub.s6.exacttarget.com/w0qsddi35fc/"; // the script where you handle the form input.
+	$('#thankyouresponse').append("<p>Thank you for submitting your inquiry to the Social Success Hub. Your question is being routed to one of our Social Studio success specialists and one of the team will be replying to you directly within the next 3 business days.</p>");
+	$('#thankyou img').show();
+	$("#lp-form").hide();
+    
+    $.ajax({
+           type: "POST",
+           dataType : "json",
+		   contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+           url: url,
+           data: $("#mc-landing-page-form").serialize(),
+           success: function(response){
+	           $('#thankyou').html("<p>For your records, here is a copy of your submission:</p>"
+			   						+"<table border='0' cellpadding='1' cellspacing='1' class='resultstable'>"
+										+"<tbody>"
+											+"<tr><td>Name:</td><td>"+response.Output[0].ssh_FirstName+" "+response.Output[0].ssh_LastName+"</td></tr>"
+											+"<tr><td>Company:</td><td>"+response.Output[0].ssh_Company+"</td></tr>"
+											+"<tr><td>Email:</td><td>"+response.Output[0].EmailAddress+"</td></tr>"
+											+"<tr><td>Question Type:</td><td>"+response.Output[0].ssh_QuestionType1+", "+response.Output[0].ssh_QuestionType2+"</td></tr>"
+											+"<tr><td>Question:</td><td>"+response.Output[0].ssh_Question+"</td></tr>"
+										+"</tbody>"
+									+"</table>");
+			   $('#thankyou img').hide();					
+           },
+          error: function(response){
+	           $('#thankyou').html("<p>Error! Status:</p>"+response.Output[0].EmailAddress);
+			   $("#lp-form").hide();
+          }       
+         });
+      });
+  
+</script>
+
+</html>
+
